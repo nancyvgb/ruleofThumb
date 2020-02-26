@@ -29,7 +29,18 @@
             
         }
     }
-   
+   .section__opinion {
+    width: calc(100% - 264px);
+    display: flex;
+    width: calc(100% - 264px);
+    margin:auto;
+    .section__opinion--pope {
+        display: grid;
+        height: 495px;
+        width: 450px;
+        background-color: #605d5d;
+    }
+   }
 
 }
 
@@ -58,7 +69,33 @@
 
 /* Smartphones (portrait and landscape) ----------- */
   @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    /* Styles */
+    .section {
+        .section__header {
+            height: 100px;
+            width: calc(100% - 20px);
+            justify-content: unset;
+            flex-direction: column;
+            .section__logo {
+                p {  
+                    margin: 0px;
+                }
+            }
+            .section__list ul {
+                padding: 0px;
+                margin: 0px;
+                li  {
+                    padding: 0px;
+                    margin: 0px;
+                    &:first-child {
+                        margin-right: 10px;
+                    }
+                    margin-right: 10px;
+                }
+    
+            } 
+        }
+     
+    }
     
     }
     
