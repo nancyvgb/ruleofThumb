@@ -1,0 +1,30 @@
+[
+    {
+
+        "name":    "Kanye West",
+        "img":      "../assets/kenye.png",
+        "thumbmsup": 64,
+        "thumbmsdown": 36
+    },
+    {
+
+        "name":    "Mark West",
+        "img":      "../assets/markzukeberg.png",
+        "thumbmsup": 64,
+        "thumbmsdown": 36
+    },
+    {
+
+        "name":    "Kanye West",
+        "img":      "../assets/michele.png",
+        "thumbmsup": 64,
+        "thumbmsdown": 36
+    },
+    {
+
+        "name":    "Kanye West",
+        "img":      "../assets/malala.png",
+        "thumbmsup": 64,
+        "thumbmsdown": 36
+    }
+]

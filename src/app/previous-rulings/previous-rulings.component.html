@@ -1,0 +1,30 @@
+<section class="rulings-section">
+    <div class="rulings-section__container">
+        <div class="rulings-section__counted">
+            <p class="rulings-section__text-speak">
+                Speak out. Be heard.<br> 
+                <span>Be counted. </span>
+            </p>
+            <p class="rulings-section__text-long">
+                Rule of Thumb is a crowd sourced court of public opinion where anyone and everyone can speak out and speak freely. It’s easy: You share your opinion, we analyze and put the data in a public report.
+            </p>
+            <i class="fa fa-times">
+            </i>
+            
+      </div>
+      <p>
+        Previous Rulings
+      </p>
+      <main class="grid">
+        <article *ngFor="let personality of personalities">
+            <div class="grid__persibality--wrapper" [ngStyle]="{'background-image': 'url(' + personality.img + ')'}">
+                
+                    <p>{{personality.name}} </p>
+
+            
+            </div>
+        </article>
+       
+      </main>
+    </div>
+</section>
