@@ -12,11 +12,23 @@ export class PreviousRulingsComponent implements OnInit {
 
   ngOnInit(): void {
     let routesObject = require('../thumbs.json');
-    this.personalities = routesObject;
 
+    let personalities = routesObject.map(
+      list => ({
+        name: list.name,
+        img: list.img,
+        thumbmsup: list.thumbmsup,
+        thumbmsdown: list.thumbmsdown,
+        percentageUp: (list.thumbmsup/(list.thumbmsup + list.thumbmsdown))*100,
+        percentageDown: (list.thumbmsdown/(list.thumbmsup + list.thumbmsdown))*100
+      })
+    )
+    let data = localStorage.getItem('personalities');
+    this.personalities = data? JSON.parse(data): personalities;
   }
   getUrl(personality){
   return '../assets/' + personality.img
   }
+ 
 
 }

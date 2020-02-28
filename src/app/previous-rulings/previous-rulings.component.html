@@ -16,12 +16,32 @@
         Previous Rulings
       </p>
       <main class="grid">
-        <article *ngFor="let personality of personalities">
-            <div class="grid__persibality--wrapper" [ngStyle]="{'background-image': 'url(' + personality.img + ')'}">
-                
-                    <p>{{personality.name}} </p>
-
-            
+        <article *ngFor="let personality of personalities; let i = index">
+            <div class="grid__personality--wrapper" [ngStyle]="{'background-image': 'url(' + personality.img + ')'}">
+                <div class="grid__personality--bottom">
+                    <div class="grid__personality--thumb">
+                        <div>
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        </div>
+                        <p>{{personality.name}} </p>
+                    </div>
+                    <p class="grid__text">
+                        Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.
+                    </p>
+                    <div class="grid__report">
+                        <button (click)="onClickVoteup(i)"  class="grid__report--up">
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        </button>
+                        <button (click)="onClickVotedown(i)" class="grid__report--down">
+                            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                        </button>
+                        <button class="grid__report--vote">Vote Now</button>
+                    </div>
+                    <div class="grid__votes">
+                        <div [ngStyle]="{'width': personality.percentageUp+'%'}" class="grid__votes--up">up</div>
+                        <div [ngStyle]="{'width': personality.percentageDown+'%'}" class="grid__votes--down">down</div>
+                    </div>
+                </div>
             </div>
         </article>
        

@@ -8,21 +8,22 @@
     },
     {
 
-        "name":    "Mark West",
+        "name":    "Mark Zuckerbetg",
         "img":      "../assets/markzukeberg.png",
-        "thumbmsup": 64,
-        "thumbmsdown": 36
+        "thumbmsup": 36,
+        "thumbmsdown": 64
+    
     },
     {
 
-        "name":    "Kanye West",
+        "name":    "Cristina Fernández de Kirchner",
         "img":      "../assets/michele.png",
-        "thumbmsup": 64,
-        "thumbmsdown": 36
+        "thumbmsup": 36,
+        "thumbmsdown": 64
     },
     {
 
-        "name":    "Kanye West",
+        "name":    "Malala Yousafzai",
         "img":      "../assets/malala.png",
         "thumbmsup": 64,
         "thumbmsdown": 36

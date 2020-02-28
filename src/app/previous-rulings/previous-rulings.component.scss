@@ -1,4 +1,4 @@
-
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
 section {
     p {
         margin: 0px;
@@ -32,6 +32,7 @@ section {
         align-items: stretch;
         margin-top: 50px;
         margin-bottom: 40px;
+       
         }
       .grid > article {
         border: 2px solid #ccc;
@@ -40,9 +41,79 @@ section {
         box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
         cursor: pointer;
         position: relative;
-        div.grid__persibality--wrapper{
+        div.grid__personality--wrapper{
+            color: #ffff;
+            display: flex;
             
             height: 547px;
+        .grid__personality--bottom {
+            margin-top: auto;
+            .grid__personality--thumb {
+                display: flex;
+                align-items: center;
+                margin-bottom: 20px;
+                p {
+                    font-size: 45px;
+                }
+                div {
+                    display: flex;
+                    background-color: #1cbbb4;
+                    height: 35px;
+                    width: 35px;
+                    margin-right: 10px;
+                    i {
+                        margin: auto;
+                    }
+                }
+              
+            }   
+            p.grid__text {
+                font-size: 16px;
+                margin-left: 45px;
+                margin-right: 90px;
+                margin-bottom: 25px;
+            }
+            .grid__report {
+                display: flex;
+                margin-left: 45px;
+                margin-right: 20px;
+                margin-bottom: 30px;
+                button {
+                    cursor: pointer;
+                    background-color: transparent;
+                    color: #ffff;
+                     width: 162px;
+                     outline: none;
+                     margin-right: 10px;
+                     &.grid__report--up {
+                        width: 35px;
+                        height: 35px;
+                        background-color: #309e99;
+                     }
+                     &.grid__report--down {
+                        width: 35px;
+                        height: 35px;
+                        background-color: #cf952f;
+                     }
+                     &.grid__report--vote{
+
+                     }
+                }
+                p {
+                    font-size: 12px;
+                }
+            } 
+            .grid__votes {
+                display: flex;
+                .grid__votes--up {
+                    background-color: #309e99;
+                }
+                .grid__votes--down {
+                    background-color: #cf952f;
+                }
+            }
+        }
+       
         }
        
       }
