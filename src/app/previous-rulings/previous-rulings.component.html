@@ -25,8 +25,11 @@
                         </div>
                         <p>{{personality.name}} </p>
                     </div>
-                    <p class="grid__text">
+                    <p *ngIf="personality.voteNow" class="grid__text">
                         Vestibulum diam ante, porttitor a odio eget, rhoncus neque. Aenean eu velit libero.
+                    </p>
+                    <p *ngIf="!personality.voteNow" class="grid__text">
+                        Thank you for voting!
                     </p>
                     <div class="grid__report">
                         <button (click)="onClickVoteup(i)"  class="grid__report--up">
@@ -35,7 +38,8 @@
                         <button (click)="onClickVotedown(i)" class="grid__report--down">
                             <i class="fa fa-thumbs-down" aria-hidden="true"></i>
                         </button>
-                        <button class="grid__report--vote">Vote Now</button>
+                        <button *ngIf="personality.voteNow"  (click)="onClickVoteNow(i)" class="grid__report--vote">Vote Now</button>
+                        <button *ngIf="!personality.voteNow" (click)="onClickVoteAgain(i)" class="grid__report--vote">Vote Again</button>
                     </div>
                     <div class="grid__votes">
                         <div [ngStyle]="{'width': personality.percentageUp+'%'}" class="grid__votes--up">
