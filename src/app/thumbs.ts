@@ -1,4 +1,4 @@
-[
+export const list =[
     {
 
         "name":    "Kanye West",

@@ -1,4 +1,7 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@function size($minpx, $max, $min) {  
+    @return calc(#{$minpx} + (#{$max} - #{$min}) * ((100vw - 300px) / (1600 - 300))); 
+   }
 section {
     p {
         margin: 0px;
@@ -8,6 +11,12 @@ section {
         width: calc(100% - 264px);
         margin:auto;
         margin-top: 35px;
+        .text-votes {
+            font-size: 40px;
+            font-weight: 300;
+            padding-top: 40px;
+            padding-bottom: 40px;
+        }
     .rulings-section__counted {
         background-color: #ebebeb;
         display: flex;
@@ -15,36 +24,34 @@ section {
         justify-content: center;
         align-items: center;
         .rulings-section__text-speak {
-            font-size: 21px;
+            font-size: size(12px, 21, 12);
             width: 37%;
+            font-weight: 300;
             span {
-                font-size: 37px;
+                font-size: size(12px, 37, 14);
+                font-weight: normal;
             }
         }
         .rulings-section__text-long {
             font-size: 15px;
+            font-weight: 300;
         }
     }
     .grid { 
         display: grid;
-        grid-template-columns: repeat(2, 1fr); 
-        grid-gap: 20px;
+        grid-template-columns: auto auto;
+        grid-gap: 40px;
         align-items: stretch;
-        margin-top: 50px;
         margin-bottom: 40px;
-       
         }
       .grid > article {
-        border: 2px solid #ccc;
-        background: #F2F2F2;
         transition: all 200ms ease-in-out;
-        box-shadow: 0px 2px 6px rgba(0,0,0,0.3);
         cursor: pointer;
         position: relative;
         div.grid__personality--wrapper{
             color: #ffff;
             display: flex;
-            
+            background-repeat: no-repeat;
             height: 547px;
         .grid__personality--bottom {
             margin-top: auto;
@@ -53,7 +60,8 @@ section {
                 align-items: center;
                 margin-bottom: 20px;
                 p {
-                    font-size: 45px;
+                    width: 360px;
+                    font-size: 43px;
                 }
                 div {
                     display: flex;
@@ -72,6 +80,7 @@ section {
                 margin-left: 45px;
                 margin-right: 90px;
                 margin-bottom: 25px;
+                font-weight: 300;
             }
             .grid__report {
                 display: flex;
@@ -88,12 +97,12 @@ section {
                      &.grid__report--up {
                         width: 35px;
                         height: 35px;
-                        background-color: #309e99;
+                        background-color: #1cbbb4;
                      }
                      &.grid__report--down {
                         width: 35px;
                         height: 35px;
-                        background-color: #cf952f;
+                        background-color: #ffad1d;
                      }
                      &.grid__report--vote{
 
@@ -105,11 +114,25 @@ section {
             } 
             .grid__votes {
                 display: flex;
+                font-size: 29px;
+                font-weight: 300;
                 .grid__votes--up {
-                    background-color: #309e99;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    background-color:rgba(28,187,187,0.7);
+                    span {
+                        margin-left: 10px;
+                    }
                 }
                 .grid__votes--down {
-                    background-color: #cf952f;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    background-color:rgba(255,173,29,0.7);
+                    display: flex;
+                    span {
+                        margin-left: auto;
+                        margin-right: 10px;
+                    }
                 }
             }
         }
@@ -122,3 +145,29 @@ section {
       }
     }
 }
+@media screen and (max-width: 768px) {
+   section .rulings-section__container {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+        .grid {
+            grid-template-columns: fit-content(480px);
+            justify-content: center;
+
+        }
+      
+    }
+    }
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    section .rulings-section__container {
+        width: 100%;
+        margin-left: 10px;
+        margin-right: 10px;
+        .grid {
+            grid-template-columns: fit-content(100px);
+            justify-content: center;
+        }
+      
+    }
+     }

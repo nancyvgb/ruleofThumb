@@ -1,0 +1,60 @@
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@function size($minpx, $max, $min) {  
+    @return calc(#{$minpx} + (#{$max} - #{$min}) * ((100vw - 300px) / (1600 - 300))); 
+   }
+section.section-footer__container {
+    
+    width: calc(100% - 264px);
+    display: flex;
+    margin:auto;
+    justify-content: space-between;
+    .section-footer--submit {
+        display: flex;
+        margin:auto;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: 40px;
+        background-image: url('../../assets/footer.png');;
+        height: 75px;
+        width: 100%;
+        p {
+            margin-left: 10px;
+            font-weight: 300;
+            font-size: size(12px, 30, 12);
+        }
+        button {
+            align-self: center;
+            cursor: pointer;
+             background-color: transparent;
+             color: #333333;
+             width: 162px;
+             outline: none;
+            margin-right: 10px;
+            padding: 10px;
+            border: 2px solid #333333; 
+            
+
+            
+        }
+        
+    }
+    &.social-media {
+        border-top: 1px dotted #333333;
+        padding-top: 30px;
+        font-size: 12px;
+    }
+   
+    .section-footer--icons--text {
+        span {
+            margin-right: 20px;
+        }
+    }
+    .section-footer--icons--icons {
+        span {
+            margin-left: 20px;
+        }
+        i {
+            margin-left: 20px;
+        }
+    }
+}

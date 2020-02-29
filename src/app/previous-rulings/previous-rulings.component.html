@@ -12,8 +12,8 @@
             </i>
             
       </div>
-      <p>
-        Previous Rulings
+      <p class="text-votes">
+       Votes
       </p>
       <main class="grid">
         <article *ngFor="let personality of personalities; let i = index">
@@ -38,8 +38,18 @@
                         <button class="grid__report--vote">Vote Now</button>
                     </div>
                     <div class="grid__votes">
-                        <div [ngStyle]="{'width': personality.percentageUp+'%'}" class="grid__votes--up">up</div>
-                        <div [ngStyle]="{'width': personality.percentageDown+'%'}" class="grid__votes--down">down</div>
+                        <div [ngStyle]="{'width': personality.percentageUp+'%'}" class="grid__votes--up">
+                            <span>
+                             <i class="fa fa-thumbs-up" aria-hidden="true"></i> 
+                            {{personality.percentageUp |  number:'1.0-0'}} %
+                            </span>                          
+                        </div>
+                        <div [ngStyle]="{'width': personality.percentageDown+'%'}" class="grid__votes--down">
+                          <span>
+                            {{personality.percentageDown |  number:'1.0-0'}} %
+                            <i class="fa fa-thumbs-down" aria-hidden="true"></i>
+                          </span>  
+                        </div>
                     </div>
                 </div>
             </div>

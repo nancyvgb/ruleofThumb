@@ -1,4 +1,7 @@
 @import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+@function size($minpx, $max, $min) {  
+    @return calc(#{$minpx} + (#{$max} - #{$min}) * ((100vw - 300px) / (1600 - 300))); 
+   }
 .container{
     width: calc(100% - 264px);
     display: flex;
@@ -20,12 +23,14 @@
         flex-flow:row wrap;
         .section__logo {
             p {
-                font-size: calc(12px + (42 - 12) * ((100vw - 300px) / (1600 - 300)));
+                font-size: size(12px, 42, 12);
+                
             }
         }
         .section__list ul li  {
+            font-weight: 300;
             display: inline;
-            font-size: calc(12px + (21 - 12) * ((100vw - 300px) / (1600 - 300)));
+            font-size: size(12px, 21, 12);
             margin-right: 50px;
             &:first-child {
                 margin-right: 55px;
@@ -42,41 +47,58 @@
         background-color:rgba(96, 92, 92, 0.3);
         backdrop-filter: blur(10px);  
         -webkit-backdrop-filter: blur(10px);
-        width: calc(170px + (495 - 170) * ((100vw - 300px) / (1600 - 300)));
+        width: size(170px, 495, 170); 
+        // calc(170px + (495 - 170) * ((100vw - 300px) / (1600 - 300)));
         margin-bottom: 70px;
         .section-text-wrapper {
-            height:  calc(100px + (370 - 100) * ((100vw - 300px) / (1600 - 300)));
-            padding-left: calc(10px + (35 - 10) * ((100vw - 300px) / (1600 - 300)));
-            padding-right: calc(15px + (75 - 15) * ((100vw - 300px) / (1600 - 300)));
+            height: size(118px, 370, 125);  
+            // calc(100px + (370 - 100) * ((100vw - 300px) / (1600 - 300)));
+            padding-left: size(10px, 35, 10);
+            // calc(10px + (35 - 10) * ((100vw - 300px) / (1600 - 300)));
+            padding-right: size(15px, 75, 15);
+            // calc(15px + (75 - 15) * ((100vw - 300px) / (1600 - 300)));
             .section__text--opinion{
-                font-size: calc(10px + (15 - 10) * ((100vw - 300px) / (1600 - 300)));
-                margin-top: calc(15px + (40 - 15) * ((100vw - 300px) / (1600 - 300)));
+                font-size: size(10px, 15, 10);
+                // calc(10px + (15 - 10) * ((100vw - 300px) / (1600 - 300)));
+                margin-top: size(15px, 40, 15);
+                // calc(15px + (40 - 15) * ((100vw - 300px) / (1600 - 300)));
                 margin-bottom: 10px;
+                font-weight: 300;
             }
             .section__text--pope {
-                font-size: calc(20px + (45 - 20) * ((100vw - 300px) / (1600 - 300)));
+                font-size: size(12px, 45, 12);
+                // calc(20px + (45 - 20) * ((100vw - 300px) / (1600 - 300)));
                 margin-top: 0px;
-                margin-bottom: calc(10px + (35 - 10) * ((100vw - 300px) / (1600 - 300)));
+                margin-bottom: size(10px, 35, 10);
+                // calc(10px + (35 - 10) * ((100vw - 300px) / (1600 - 300)));
             }
             .section__text--talking {
-                font-size: calc(6px + (18 - 6) * ((100vw - 300px) / (1600 - 300)));
+                font-size: size(6px, 18, 6);
+                // calc(6px + (18 - 6) * ((100vw - 300px) / (1600 - 300)));
                 margin-top: 0px;
-                margin-bottom: calc(10px + (25 - 10) * ((100vw - 300px) / (1600 - 300)));
+                margin-bottom: size(10px, 25, 10);
+                // calc(10px + (25 - 10) * ((100vw - 300px) / (1600 - 300)));
+                font-weight: 300;
             }
             .section__text--info {
-                font-size: calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));
+                font-weight: 300;
+                font-size: size(10px, 14, 10);
+                // calc(10px + (14 - 10) * ((100vw - 300px) / (1600 - 300)));
                 margin-top: 0px;
-                margin-bottom: calc(10px + (45 - 10) * ((100vw - 300px) / (1600 - 300)));
+                margin-bottom: size(10px, 45, 10);
+                // calc(10px + (45 - 10) * ((100vw - 300px) / (1600 - 300)));
             }
             .section__text--veredict {
                 margin-top: 0px;
-                margin-bottom: calc(10px + (35 - 10) * ((100vw - 300px) / (1600 - 300)));
-                font-size: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));
+                margin-bottom: size(10px, 35, 10);
+                // calc(10px + (35 - 10) * ((100vw - 300px) / (1600 - 300)));
+                font-size: size(12px, 18, 12);
+                // calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));
             }
 
         }
         .section__pope-thums {
-            height: calc(20px + (80 - 20) * ((100vw - 300px) / (1600 - 300)));
+            height: size(20px, 80, 20);
             display: flex;
             span {
                 width: 50%;
@@ -87,6 +109,9 @@
                     display: flex;
                     opacity: 0.8;
                     background-color: #28b7b0;
+                    i.fa.fa-thumbs-up {
+                        font-size: size(12px, 45, 12);
+                    }
     
                 }
                 &.section__pope-thums--down {
@@ -95,24 +120,27 @@
                     display: flex;
                     opacity: 0.8;
                     background-color: #feb432;
+                    i.fa.fa-thumbs-down {
+                        font-size: size(12px, 45, 12);
+                    }
                 }
             }
         }
        }
    }
    .section__closing {
-    height: 50px;
+    height: size(20px, 50, 20);
     display: flex;
     align-items: center; 
     justify-content: center;
     background-color: rgba(147, 134, 122, .3);
     .section__closing--in {
         width: 40%;
-        height: 50px;
+        height: size(20px, 50, 20);
         background-color: rgba(147, 134, 122, .3);
         p {
             margin-right: 10px;
-            font-size: 13px;
+            font-size: size(10px, 13, 10);
             text-align: right;
             line-height: 25px;
         }
@@ -131,16 +159,15 @@
     .section__closing--days {
         color: #464646;
         width: 60%;
-        font-size: 36px;
-        font-weight: bold;
+        font-size:  size(12px, 36, 12);
         background-color: rgba(255, 255, 255, .7);
-        height: 50px;
+        height: size(20px, 50, 20);
         .text-space {
             margin-left: 20px;
             margin-right: 15px;
         }
         .text-light {
-            font-weight: lighter;
+            font-weight: 300;
         }
     }
 }
@@ -150,7 +177,7 @@
 @media screen and (max-width: 768px) {
 .section {
 	.section__header {
-        height: 50px;
+        height: 40px;
         width: calc(100% - 20px);
         justify-content: space-around;
         .section__list ul {
@@ -167,9 +194,13 @@
         } 
 	}
     .section__container {
+        margin-top: 30px;
         width: calc(100% - 150px);
       
        }
+   }
+   .section__closing--days  {
+    line-height: 20px;
 }
 }
 
@@ -188,7 +219,9 @@
             .section__list ul {
                 padding: 0px;
                 margin: 0px;
+                font-weight: 300;
                 li  {
+                    font-weight: 300;
                     padding: 0px;
                     margin: 0px;
                     &:first-child {
@@ -199,7 +232,7 @@
             } 
         }
         .section__container {
-            margin-top: 10px;
+            margin-top: 0px;
             width: calc(100% - 145px);
             .section__container--opinion {
                 margin: auto;
@@ -207,6 +240,15 @@
           
            }  
         }
+        .section__closing--in {
+            p {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+    .section__closing--days  {
+        line-height: 20px;
+    }
      }
     
     /* Smartphones (landscape) ----------- */
@@ -222,6 +264,12 @@
     /* iPads (portrait and landscape) ----------- */
     @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     /* Styles */
+    .section__closing--in {
+        p {
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
     }
     
     /* iPads (landscape) ----------- */

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as personalitiesList from '../thumbs';
 
 @Component({
   selector: 'app-previous-rulings',
@@ -11,9 +12,8 @@ export class PreviousRulingsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let routesObject = require('../thumbs.json');
-
-    let personalities = routesObject.map(
+  
+    let personalities = personalitiesList.list.map(
       list => ({
         name: list.name,
         img: list.img,
@@ -29,5 +29,6 @@ export class PreviousRulingsComponent implements OnInit {
   getUrl(personality){
   return '../assets/' + personality.img
   }
- 
+
+
 }
