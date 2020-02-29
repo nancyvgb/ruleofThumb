@@ -43,6 +43,7 @@
         backdrop-filter: blur(10px);  
         -webkit-backdrop-filter: blur(10px);
         width: calc(170px + (495 - 170) * ((100vw - 300px) / (1600 - 300)));
+        margin-bottom: 70px;
         .section-text-wrapper {
             height:  calc(100px + (370 - 100) * ((100vw - 300px) / (1600 - 300)));
             padding-left: calc(10px + (35 - 10) * ((100vw - 300px) / (1600 - 300)));
@@ -79,29 +80,70 @@
             display: flex;
             span {
                 width: 50%;
+                i {font-size: 45px;}
                 &.section__pope-thums--up {
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
                     opacity: 0.8;
                     background-color: #28b7b0;
     
                 }
                 &.section__pope-thums--down {
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
                     opacity: 0.8;
                     background-color: #feb432;
                 }
             }
         }
        }
-    // width: calc(100% - 264px);
-    // display: flex;
-    // width: calc(100% - 264px);
-    // margin:auto;
-    // .section__opinion--pope {
-    //     display: grid;
-    //     height: 495px;
-    //     width: 450px;
-    //     background-color: #605d5d;
-    // }
    }
+   .section__closing {
+    height: 50px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    background-color: rgba(147, 134, 122, .3);
+    .section__closing--in {
+        width: 40%;
+        height: 50px;
+        background-color: rgba(147, 134, 122, .3);
+        p {
+            margin-right: 10px;
+            font-size: 13px;
+            text-align: right;
+            line-height: 25px;
+        }
+        /* background-color: #93867a;
+        opacity: 0.3; */
+    }
+    .arrow-left {
+        width: 0; 
+        height: 0; 
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid rgba(147, 134, 122, .4);
+        position: absolute;
+        left: 40%
+    }
+    .section__closing--days {
+        color: #464646;
+        width: 60%;
+        font-size: 36px;
+        font-weight: bold;
+        background-color: rgba(255, 255, 255, .7);
+        height: 50px;
+        .text-space {
+            margin-left: 20px;
+            margin-right: 15px;
+        }
+        .text-light {
+            font-weight: lighter;
+        }
+    }
+}
 
 }
 
@@ -154,7 +196,6 @@
                     }
                     margin-right: 10px;
                 }
-    
             } 
         }
         .section__container {
@@ -164,11 +205,9 @@
                 margin: auto;
             }
           
-           }
-     
-    }
-    
-    }
+           }  
+        }
+     }
     
     /* Smartphones (landscape) ----------- */
     @media only screen and (min-width : 321px) {

@@ -30,5 +30,4 @@ export class PreviousRulingsComponent implements OnInit {
   return '../assets/' + personality.img
   }
  
-
 }
